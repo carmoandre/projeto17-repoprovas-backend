@@ -12,6 +12,9 @@ interface ExamBody {
 }
 
 export async function upload(body: ExamBody) {
+    //verificar tabela meio entre professor e subject para saber se o professor da a matéria
+
+    //const profTeachesSubject =  await getRepository()
     const exam = await getRepository(Exams).insert(body);
     if (exam.identifiers.length) return true;
     return false;
